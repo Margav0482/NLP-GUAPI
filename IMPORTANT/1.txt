@@ -1,0 +1,16 @@
+# I need a better opinion on this guy if you have a better idea, please do hit me up.
+#
+# Here's the thing:
+# task: Speech to text is input. Input has alot of words, find Student Name example: "Margav Ghoghari" from "Hello, mera naam Margav Ghoghari hai"
+# Problem: Google input is really bad. Basically, if someone name is "Harry", it will give output as "Harry" but if it's Margav it is "margav". The difference is my name starting letter is not CAPS due to which, im unable to use regex to grab name.
+# Google speech to text we are using is basics, so these issues are going to be there.
+# Here's how i got some opinions/solutions:
+#
+# Translate Solution: I have learnt french in past, so in french all words are french but the Person Names never change. We get output in English or Hindi. It will translate it in french but not Name and then comparing the first input with
+# the translated string and only it will match the NAME so we will grab that from it. Solution is easy but too lengthy because translation thing from google api is not possible, billing and stuff is there.
+#
+#
+# Regex Solution: Imagine ouput is in English lettters only ("mera naam Mr Margav Ghoghari hai"), so here "Mr" or "Ms" is necessary when we give input. so i have created a REGEX where it will grab 2 words after Mr or Ms and it will be
+# ofcourse in array so we can later on use it for searching query in dbs or etc.. In google input, if we say "mister margav ghoghari kaha hai", it will give output: "Mr margav ghoghari kaha hai" and our
+# target array will be ("margav", "ghoghari")
+#
